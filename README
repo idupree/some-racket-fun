@@ -1,0 +1,17 @@
+Open tree-fun.rkt in DrRacket (e.g., `drracket tree-fun.rkt`).
+
+Then run it and try
+  (fun '(1 2 3 4 5 6 7))
+and
+  (fun qbf)
+in the interactive area.
+
+
+Minor implementation note:
+I made/used "string-to-scheme-list.sh" because I didn't yet find a way
+in Scheme/Racket to convert a string to a list of characters (which I know
+is suspect because Unicode code-points and extended grapheme clusters etc,
+which one do I mean, but at least it's clear for this fixed ASCII text):
+  echo 'The quick brown fox jumps over the lazy dog' | ./string-to-scheme-list.sh
+-Isaac
+
