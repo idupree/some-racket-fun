@@ -19,9 +19,9 @@
     (case (length tree)
       [(0) (blank)]
       [(1) (text (format "~a" (first tree)))]
-      [(2) (this-layout
+      [(2) (frame (this-layout
             (hv-layout-shapes (first tree) next-layout)
-            (hv-layout-shapes (second tree) next-layout))])))
+            (hv-layout-shapes (second tree) next-layout)))])))
 
 ;; TODO: what's a good way to convert string -> list in Scheme?
 (define qbf
