@@ -1,5 +1,12 @@
 #lang slideshow
 
+; (treeize lst) turns lst into a balanced binary tree
+; with the data as single-element-list leaf nodes,
+; and the branch nodes as two-element-lists
+; containing child tree nodes.
+;
+; An empty list is turned into '().
+
 (define (treeize-impl lst len)
   (cond
     [(= len 0) '()]
@@ -11,6 +18,15 @@
 
 (define (treeize lst)
   (treeize-impl lst (length lst)))
+
+
+; hv-layout-shapes takes a binary tree (of the
+; above format).  It splits the first level vertically,
+; each of the second-level nodes horizontally, then vertically,
+; etc, alternating.  You specify whether the first level
+; is horizontal or vertical:
+; (hv-layout-shapes tree vc-append)  ; vertical
+; (hv-layout-shapes tree hc-append)  ; horizontal
 
 (define (hv-layout-shapes tree initial)
   (let ([this-layout initial]
